@@ -7,7 +7,11 @@ public class RunAnalysis {
 
     public static void main(String[] args) {
 
-        EventsManager manager = EventsUtils
+        EventsManager manager = EventsUtils.createEventsManager();
+        SimpleEventsHandler handler = new SimpleEventsHandler();
+        manager.addHandler(handler);
+
+        EventsUtils.readEvents(manager, "D:\\Jetbrain\\matsim-serengeti-park-hodenhagen\\scenarios\\serengeti-park-v1.0\\output\\output-serengeti-park-v1.0-run1\\serengeti-park-v1.0-run1.output_events.xml.gz");
     }
 
 }
